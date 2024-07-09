@@ -1,0 +1,30 @@
+[19-Feb-2020 19:23:55 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:27:50 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:33:10 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:37:26 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:41:57 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:43:18 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:45:09 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:47:51 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:48:26 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:52:09 UTC] PHP Warning:  require(/home/mariela1/public_html/blog/vendor/autoload.php): failed to open stream: No such file or directory in /home/mariela1/public_html/index.php on line 24
+[19-Feb-2020 19:52:09 UTC] PHP Fatal error:  require(): Failed opening required '/home/mariela1/public_html/blog/vendor/autoload.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mariela1/public_html/index.php on line 24
+[19-Feb-2020 19:54:57 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:54:58 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:55:51 UTC] PHP Warning:  require(/home/mariela1/public_html/blog/vendor/autoload.php): failed to open stream: No such file or directory in /home/mariela1/public_html/index.php on line 24
+[19-Feb-2020 19:55:51 UTC] PHP Fatal error:  require(): Failed opening required '/home/mariela1/public_html/blog/vendor/autoload.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mariela1/public_html/index.php on line 24
+[19-Feb-2020 19:56:09 UTC] PHP Warning:  require(/home/mariela1/public_html/../../blog/vendor/autoload.php): failed to open stream: No such file or directory in /home/mariela1/public_html/index.php on line 24
+[19-Feb-2020 19:56:09 UTC] PHP Fatal error:  require(): Failed opening required '/home/mariela1/public_html/../../blog/vendor/autoload.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/mariela1/public_html/index.php on line 24
+[19-Feb-2020 19:56:25 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:56:37 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 19:56:47 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 20:13:14 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 20:13:34 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 20:13:46 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 20:13:54 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 20:13:54 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 20:14:02 UTC] PHP Parse error:  syntax error, unexpected '?' in /home/mariela1/blog/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php on line 500
+[19-Feb-2020 20:18:26 UTC] PHP Fatal error:  Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home/mariela1/blog/vendor/symfony/translation/TranslatorInterface.php on line 24
+[19-Feb-2020 20:33:02 UTC] PHP Fatal error:  Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home/mariela1/blog/vendor/symfony/translation/TranslatorInterface.php on line 24
+[19-Feb-2020 20:46:15 UTC] PHP Fatal error:  Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home/mariela1/blog/vendor/symfony/translation/TranslatorInterface.php on line 24
+[19-Feb-2020 20:46:24 UTC] PHP Fatal error:  Declaration of Symfony\Component\Translation\TranslatorInterface::setLocale($locale) must be compatible with Symfony\Contracts\Translation\LocaleAwareInterface::setLocale(string $locale) in /home/mariela1/blog/vendor/symfony/translation/TranslatorInterface.php on line 24
