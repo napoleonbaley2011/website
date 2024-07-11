@@ -103,87 +103,90 @@
                     style="transform: rotate(5deg);">
             </a>
         </div>
-        <div class="bottom-area">
-            <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon" style="zoom: 2"></i></div>
-            <ul class="main-menu visible-on-click" id="main-menu">
-                @guest
-                    <li class="{{ Request::path() == '/' ? 'active' : '' }}">
-                        <a href="{{ route('public.index') }}" onclick="toHref('{{ route('public.index') }}')">
-                            INICIO</a>
-                    </li>
-                    <li class="{{ Request::path() == 'noticias/nacional' ? 'drop-down active' : 'drop-down' }}">
-                        <a href="#!" style="color: #fcff3b; font-weight: 400">
-                            <i class="fa fa-star"></i> &nbsp; ACTIVIDAD POLÍTICA<i class="ion-ios-arrow-down"></i>
-                        </a>
-                        <ul class="drop-down-menu">
-                            <li>
-                                <a href="{{ route('public.noticias', 'nacional') }}"
-                                    onclick="toHref('{{ route('public.noticias', 'nacional') }}')">
-                                    <img src="https://flagsapi.com/BO/flat/24.png" style="width: 20px;"> &nbsp;
-                                    NACIONAL
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('public.noticias', 'regional') }}"
-                                    onclick="toHref('{{ route('public.noticias', 'regional') }}')">
-                                    <img src="https://flagsapi.com/MC/flat/24.png" style="width: 20px;"> &nbsp;
-                                    REGIONAL
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('public.noticias', 'c41') }}"
-                                    onclick="toHref('{{ route('public.noticias', 'c41') }}')">
-                                    <img src="https://flagsapi.com/MC/flat/24.png" style="width: 20px;"> &nbsp;
-                                    CIRCUNSCRIPCION 41
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="{{ Request::path() == 'perfil' ? 'active' : '' }}">
-                        <a href="{{ route('public.perfil') }}" onclick="toHref('{{ route('public.perfil') }}')">
-                            SOBRE MÍ</a>
-                    </li>
-                @else
-                    <li class="{{ Request::path() == 'home' ? 'active' : '' }}">
-                        <a href=" {{ route('home') }} " class="text-center" onclick="toHref('{{ route('home') }}')">
-                            <i class="fas fa-home"></i>
-                        </a>
-                    </li>
-                    <li class="{{ Request::path() == 'user' ? 'active' : '' }}">
-                        <a href="{{ route('user.index') }}" onclick="toHref('{{ route('user.index') }}')">ADMIN</a>
-                    </li>
-                    <li class="{{ Request::path() == 'noticias' ? 'active' : '' }}">
-                        <a href=" {{ route('noticias.index') }}"
-                            onclick="toHref('{{ route('noticias.index') }}')">NOTICIAS</a>
-                    </li>
-                    <li class="{{ Request::path() == 'barrios' ? 'active' : '' }}">
-                        <a href=" {{ route('barrios.index') }} "
-                            onclick="toHref('{{ route('barrios.index') }}')">C-41</a>
-                    </li>
-                    <li class="{{ Request::path() == 'propuestas' ? 'active' : '' }}">
-                        <a href=" {{ route('propuestas.index') }} "
-                            onclick="toHref('{{ route('propuestas.index') }}')">PROPUESTAS</a>
-                    </li>
-                    <li class="{{ Request::path() == 'portadas' ? 'active' : '' }}">
-                        <a href=" {{ route('portadas.index') }} "
-                            onclick="toHref('{{ route('portadas.index') }}')">PORTADAS</a>
-                    </li>
-                    <li class="{{ Request::path() == 'categorias' ? 'active' : '' }}">
-                        <a href=" {{ route('categorias.index') }} "
-                            onclick="toHref('{{ route('categorias.index') }}')">CATEGORIAS</a>
-                    </li>
-                    <li class="text-center">
-                        <form action=" {{ route('logout') }} " method="POST">
-                            @csrf
-                            <button class="btn btn-logout btn-block">CERRAR SESIÓN
-                                <i class="fas fa-sign-out-alt"></i>
-                            </button>
-                        </form>
-                    </li>
-                @endguest
 
-            </ul>
-        </div>
+        <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon" style="zoom: 2"></i></div>
+        <ul class="main-menu visible-on-click" id="main-menu">
+            @guest
+                <li class="{{ Request::path() == '/' ? 'active' : '' }}">
+                    <a href="{{ route('public.index') }}" onclick="toHref('{{ route('public.index') }}')">
+                        INICIO</a>
+                </li>
+                <li class="{{ Request::path() == 'noticias/nacional' ? 'drop-down active' : 'drop-down' }}">
+                    <a href="#!" style="color: #fcff3b; font-weight: 400">
+                        <i class="fa fa-star"></i> &nbsp; ACTIVIDAD POLÍTICA<i class="ion-ios-arrow-down"></i>
+                    </a>
+                    <ul class="drop-down-menu">
+                        <li>
+                            <a href="{{ route('public.noticias', 'nacional') }}"
+                                onclick="toHref('{{ route('public.noticias', 'nacional') }}')">
+                                <img src="https://flagsapi.com/BO/flat/24.png" style="width: 20px;"> &nbsp;
+                                NACIONAL
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('public.noticias', 'regional') }}"
+                                onclick="toHref('{{ route('public.noticias', 'regional') }}')">
+                                <img src="https://flagsapi.com/MC/flat/24.png" style="width: 20px;"> &nbsp;
+                                REGIONAL
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('public.noticias', 'c41') }}"
+                                onclick="toHref('{{ route('public.noticias', 'c41') }}')">
+                                <img src="https://flagsapi.com/MC/flat/24.png" style="width: 20px;"> &nbsp;
+                                CIRCUNSCRIPCION 41
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="{{ Request::path() == 'proyectos' ? 'active' : '' }}">
+                    <a href="{{ route('proyectos.index') }}" onclick="toHref('{{ route('proyectos.index') }}')">
+                        PROYECTOS DE LEY</a>
+                </li>
+                <li class="{{ Request::path() == 'perfil' ? 'active' : '' }}">
+                    <a href="{{ route('public.perfil') }}" onclick="toHref('{{ route('public.perfil') }}')">
+                        SOBRE MÍ</a>
+                </li>
+            @else
+                <li class="{{ Request::path() == 'home' ? 'active' : '' }}">
+                    <a href=" {{ route('home') }} " class="text-center" onclick="toHref('{{ route('home') }}')">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li class="{{ Request::path() == 'user' ? 'active' : '' }}">
+                    <a href="{{ route('user.index') }}" onclick="toHref('{{ route('user.index') }}')">ADMIN</a>
+                </li>
+                <li class="{{ Request::path() == 'noticias' ? 'active' : '' }}">
+                    <a href=" {{ route('noticias.index') }}"
+                        onclick="toHref('{{ route('noticias.index') }}')">NOTICIAS</a>
+                </li>
+                <li class="{{ Request::path() == 'barrios' ? 'active' : '' }}">
+                    <a href=" {{ route('barrios.index') }} " onclick="toHref('{{ route('barrios.index') }}')">C-41</a>
+                </li>
+                <li class="{{ Request::path() == 'propuestas' ? 'active' : '' }}">
+                    <a href=" {{ route('propuestas.index') }} "
+                        onclick="toHref('{{ route('propuestas.index') }}')">PROPUESTAS</a>
+                </li>
+                <li class="{{ Request::path() == 'portadas' ? 'active' : '' }}">
+                    <a href=" {{ route('portadas.index') }} "
+                        onclick="toHref('{{ route('portadas.index') }}')">PORTADAS</a>
+                </li>
+                <li class="{{ Request::path() == 'categorias' ? 'active' : '' }}">
+                    <a href=" {{ route('categorias.index') }} "
+                        onclick="toHref('{{ route('categorias.index') }}')">CATEGORIAS</a>
+                </li>
+                <li class="text-center">
+                    <form action=" {{ route('logout') }} " method="POST">
+                        @csrf
+                        <button class="btn btn-logout btn-block">CERRAR SESIÓN
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </form>
+                </li>
+            @endguest
+
+        </ul>
+
     </header>
 
 
@@ -321,7 +324,6 @@
                 }
             });
         });
-        
     </script>
 </body>
 

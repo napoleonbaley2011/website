@@ -11,6 +11,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\NoticiasController;
 use App\Http\Controllers\PortadasController;
 use App\Http\Controllers\PropuestasController;
+use App\Http\Controllers\ProyectController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -55,7 +56,7 @@ Route::resource('noticias', NoticiasController::class);
 Route::resource('galeria_noticia', GaleriaNoticiasController::class);
 Route::get('barrios', [BarriosController::class, 'index'])->name('barrios.index');
 Route::get('comunidades', [ComunidadesController::class, 'index'])->name('comunidades.index');
-Route::resource('categorias', CategoriasController::class);
+Route::resource('categorias', CategoriasController::class); 
 Route::resource('propuestas', PropuestasController::class);
 Route::resource('portadas', PortadasController::class);
 Route::resource('articulos', ArticulosController::class);
@@ -72,3 +73,5 @@ Route::post('user/password', [UserController::class, 'editPassword'])->name('use
 // Route::get('/galeria_comunidad/{id}/lista', 'GaleriaComunidadesController@index')->name('galeriacom.index');
 // Route::post('/galeria_comunidad/store', 'GaleriaComunidadesController@store')->name('galeriacom.store');
 // Route::post('/galeria_comunidad/destroy', 'GaleriaComunidadesController@destroy')->name('galeriacom.destroy');
+
+Route::resource('proyectos', ProyectController::class);
