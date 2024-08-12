@@ -1,17 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM completamente cargado y parseado');
+
     // Header Scroll Effect
     window.addEventListener('scroll', function() {
         var header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (header) {
+            console.log('Scroll Y:', window.scrollY);
+            if (window.scrollY > 50) {
+                console.log('Agregando clase scrolled');
+                header.classList.add('scrolled');
+            } else {
+                console.log('Removiendo clase scrolled');
+                header.classList.remove('scrolled');
+            }
         }
     });
 
-    // Initialize LayerSlider and Swiper
+    // Inicializar LayerSlider y Swiper
     enableLayerSlider();
     enableSwiper();
+
+    // Nav Menu Toggle
+    const menuNavIcon = document.querySelector('.menu-nav-icon');
+    const mainMenu = document.querySelector('.main-menu');
+
+    if (menuNavIcon) {
+        menuNavIcon.addEventListener('click', function() {
+            if (mainMenu.classList.contains('visible')) {
+                mainMenu.classList.remove('visible');
+            } else {
+                mainMenu.classList.add('visible');
+            }
+        });
+    }
 });
 
 // Function Definitions
@@ -21,23 +42,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Play Video
     if (isExists('.embed-video')) {
+        console.log('Inicializando video embed');
         $('.embed-video').embedVideo();
     }
 
     // Countdown Time
+    console.log('Inicializando cuenta regresiva');
     countdownTime();
-
-    // Nav Menu Toggle
-    $('[data-nav-menu]').on('click', function (event) {
-        var $this = $(this),
-            visibleHeadArea = $this.data('nav-menu');
-        $(visibleHeadArea).toggleClass('visible');
-    });
 
     // Circular Progress Bar
     var isAnimated = false;
     $(window).on('scroll', function () {
         if (isExists($('.circliful')) && isElementInViewport($('.circliful')) && !isAnimated) {
+            console.log('Inicializando Circular Progress Bar');
             $('.circliful').circliful();
             isAnimated = true;
         }
@@ -53,6 +70,7 @@ function isExists(elem) {
 // Function to Initialize Swiper
 function enableSwiper() {
     if (isExists('.swiper-container')) {
+        console.log('Inicializando Swiper');
         $('.swiper-container').each(function () {
             var swiper = new Swiper($(this)[0], {
                 pagination: $(this).find('.swiper-pagination'),
@@ -84,6 +102,7 @@ function enableSwiper() {
 // Function to Initialize LayerSlider
 function enableLayerSlider() {
     if (isExists('#slider')) {
+        console.log('Inicializando LayerSlider para #slider');
         $('#slider').layerSlider({
             sliderVersion: '6.0.0',
             responsiveUnder: 0,
@@ -96,6 +115,7 @@ function enableLayerSlider() {
         });
     }
     if (isExists('#slider2')) {
+        console.log('Inicializando LayerSlider para #slider2');
         $('#slider2').layerSlider({
             sliderVersion: '6.0.0',
             responsiveUnder: 0,
@@ -112,6 +132,7 @@ function enableLayerSlider() {
 // Function to Initialize Countdown
 function countdownTime() {
     if (isExists('#clock')) {
+        console.log('Inicializando cuenta regresiva para #clock');
         $('#clock').countdown('2018/01/01', function (event) {
             $(this).html(event.strftime(''
                 + '<div class="time-sec"><h1>%D</h1> days <h1 class="semicolon">:</h1></div>'
