@@ -1,51 +1,125 @@
 @inject('carbon', 'Carbon\Carbon')
 @extends('layouts.app')
 @section('css')
-<style>
-@media screen and (min-width: 0px) and (max-width: 400px) {
-    .navWrap{
-        display:block;
-    }
-    .navWrap2{
-        display:none;
-    }
-}
+    <style>
+        .ad-modal {
+            display: none;
+            /* Oculto inicialmente */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Fondo oscuro */
+        }
 
-@media screen and (min-width: 400px) {
-    .navWrap{
-        display:none;
-    }
-     .navWrap2{
-        display:block;
-    }
-}
-</style>
+        .ad-modal-content {
+            position: relative;
+            margin: 10% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .ad-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .ad-close:hover,
+        .ad-close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 0px) and (max-width: 400px) {
+            .navWrap {
+                display: block;
+            }
+
+            .navWrap2 {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 400px) {
+            .navWrap {
+                display: none;
+            }
+
+            .navWrap2 {
+                display: block;
+            }
+        }
+    </style>
+@endsection
+@section('js')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var modal = document.getElementById("adModal");
+            var closeBtn = document.getElementsByClassName("ad-close")[0];
+
+            // Mostrar el modal al cargar la página
+            modal.style.display = "block";
+
+            // Cerrar el modal al hacer clic en la "X"
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Cerrar el modal si se hace clic fuera de la ventana modal
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        });
+    </script>
 @endsection
 @section('content')
+    <div id="adModal" class="ad-modal">
+        <div class="ad-modal-content">
+            <span class="ad-close">&times;</span>
+            <img src="{{ asset('assets/images/logos/logan.png') }}" alt="Publicidad" style="width: 50%; max-height: 100vh; ">
+        </div>
+    </div>
     <div class="main-slider ">
-        <div id="slider" >
-          <!--  <div class="ls-slide "
-                data-ls="bgsize:contain; bgposition:50% 20%; duration:4000; transition2d:104; kenburnsscale:0.00;">
-                <img src="{!! asset('assets/images/slider/slider-1.webp') !!}" class="ls-bg" alt=""  />
-            </div>
-            <div class="ls-slide"
-                data-ls="bgsize:cover; bgposition:50% 20%; duration:4000; transition2d:104; kenburnsscale:0.00;">
-                <img src="{!! asset('assets/images/slider/slider-2.webp') !!}" class="ls-bg" alt="" />
-               <div class="slider-contents ls-l" style="top:50%; left:20%;padding:5px"
-                    data-ls="offsetyin:100%; offsetxout:-50%; durationin:800; delayin:100; durationout:400; parallaxlevel:0;">
-                    <img src="{!! asset('assets/images/logos/logo-nuevo2.png') !!}" style="width: 200px; border-radius:10px; border:10px solid white">
+        <div id="slider">
+            <!--  <div class="ls-slide "
+                            data-ls="bgsize:contain; bgposition:50% 20%; duration:4000; transition2d:104; kenburnsscale:0.00;">
+                            <img src="{!! asset('assets/images/slider/slider-1.webp') !!}" class="ls-bg" alt=""  />
+                        </div>
+                        <div class="ls-slide"
+                            data-ls="bgsize:cover; bgposition:50% 20%; duration:4000; transition2d:104; kenburnsscale:0.00;">
+                            <img src="{!! asset('assets/images/slider/slider-2.webp') !!}" class="ls-bg" alt="" />
+                           <div class="slider-contents ls-l" style="top:50%; left:20%;padding:5px"
+                                data-ls="offsetyin:100%; offsetxout:-50%; durationin:800; delayin:100; durationout:400; parallaxlevel:0;">
+                                <img src="{!! asset('assets/images/logos/logo-nuevo2.png') !!}" style="width: 200px; border-radius:10px; border:10px solid white">
+                            </div>
+                        </div>
+                -->
+            @foreach ($portadas as $p)
+                <div class="ls-slide"
+                    data-ls="bgsize:cover; bgposition:50% 20%; duration:4000; transition2d:104; kenburnsscale:0.00;">
+                    <img src="{!! asset('uploads/portada/' . $p->imagen) !!}" class="ls-bg" alt="" />
+                    <div class="slider-contents ls-l" style="top:50%; left:20%;padding:5px"
+                        data-ls="offsetyin:100%; offsetxout:-50%; durationin:800; delayin:100; durationout:400; parallaxlevel:0;">
+                        <img src="{!! asset('assets/images/logos/logo-nuevo2.png') !!}"
+                            style="width: 200px; border-radius:10px; border:10px solid white">
+                    </div>
                 </div>
-            </div>
-    -->
-            @foreach($portadas as $p)
-            <div class="ls-slide"
-                data-ls="bgsize:cover; bgposition:50% 20%; duration:4000; transition2d:104; kenburnsscale:0.00;">
-                <img src="{!! asset('uploads/portada/' . $p->imagen) !!}" class="ls-bg" alt="" />
-               <div class="slider-contents ls-l" style="top:50%; left:20%;padding:5px"
-                    data-ls="offsetyin:100%; offsetxout:-50%; durationin:800; delayin:100; durationout:400; parallaxlevel:0;">
-                    <img src="{!! asset('assets/images/logos/logo-nuevo2.png') !!}" style="width: 200px; border-radius:10px; border:10px solid white">
-                </div>
-            </div>
             @endforeach
         </div>
     </div>
@@ -53,7 +127,8 @@
         <div class="container p-0">
             <div class="about-author pt-3 mt-1">
                 <div class="col-12 text-center text-uppercase">
-                    Número de visitas <h3 class="text-danger" style="font-family: 'Calibri'; font-weight:bold">{{ $visitas->id }}</h3>
+                    Número de visitas <h3 class="text-danger" style="font-family: 'Calibri'; font-weight:bold">
+                        {{ $visitas->id }}</h3>
                 </div>
                 <h6 class="quoto text-justify">
                     <em>
@@ -166,7 +241,8 @@
                                         style="display: inline-block;">
                                         @csrf
                                         <input type="hidden" name="categoria" value="{{ $cat->nombre }}">
-                                        <button class="btn category-btn mt-1" type="submit" style=" max-width:100%;  white-space: initial;">
+                                        <button class="btn category-btn mt-1" type="submit"
+                                            style=" max-width:100%;  white-space: initial;">
                                             <h6 class="name">{{ $cat->nombre }}</h6>
                                         </button>
                                     </form>

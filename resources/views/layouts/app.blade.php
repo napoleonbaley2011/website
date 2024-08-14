@@ -115,6 +115,11 @@
                         INICIO
                     </a>
                 </li>
+                <li class="{{ Request::path() == 'proyecto' ? 'active' : '' }}">
+                    <a href="{{ route('public.proyecto') }}" onclick="toHref('{{ route('public.proyecto') }}')">
+                        PROYECTOS DE LEY
+                    </a>
+                </li>
                 <li class="{{ Request::path() == 'noticias/nacional' ? 'drop-down active' : 'drop-down' }}">
                     <a href="#!" style="color: #fcff3b; font-weight: 400">
                         <i class="fa fa-star"></i> &nbsp; ACTIVIDAD POLÍTICA<i class="ion-ios-arrow-down"></i>

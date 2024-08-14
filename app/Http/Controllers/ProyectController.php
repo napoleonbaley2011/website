@@ -98,4 +98,9 @@ class ProyectController extends Controller
         return redirect()->route('proyects.index')
                         ->with('success', 'Proyecto eliminado exitosamente.');
     }
+
+    public function presentacion()
+    {
+        return view('public.proyecto');
+    }
 }

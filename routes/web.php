@@ -33,6 +33,8 @@ Route::post('/actividad/search', [NoticiasController::class, 'publicoSearch'])->
 Route::get('/c41/barrios', [BarriosController::class, 'barrios'])->name('c41.barrios');
 Route::get('/c41/comunidades', [ComunidadesController::class, 'comunidades'])->name('c41.comunidades');
 Route::post('/search', [IndexController::class, 'search'])->name('public.search');
+Route::get('/proyecto',[ProyectController::class, 'presentacion'])->name('public.proyecto');
+
 
 // Route::get('/seguimiento', 'SeguimientoController@listaPublica')->name('seguimiento');
 // Route::get('/propuestas', 'PropuestasController@listaPublica')->name('propuestas');

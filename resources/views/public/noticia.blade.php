@@ -1,30 +1,33 @@
 @extends('layouts.app')
 
 @section('metas')
- 
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="{!!$noticia->titulo!!}" />
-  <meta property="og:description"   content="{!!$noticia->resumen!!}" />
-  <meta property="fb:app_id"        content="853213614848126" />
-  @if ($noticia->tipo == 1)
-    <meta property="og:url"           content="https://www.marielabaldivieso.com/actividad/{!!$noticia->id!!}/ver" />
-    <meta property="og:video"         content="{!!$noticia->archivo!!}">
-   <!-- @if(explode('/embed/', $noticia->archivo)[0] === 'https://www.youtube.com')
-    <meta property="og:image"         content="{!! 'https://i.ytimg.com/vi/'. explode('/embed/', $noticia->archivo)[1] .'/hqdefault.jpg' !!}" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{!! $noticia->titulo !!}" />
+    <meta property="og:description" content="{!! $noticia->resumen !!}" />
+    <meta property="fb:app_id" content="853213614848126" />
+    @if ($noticia->tipo == 1)
+        <meta property="og:url" content="https://www.marielabaldivieso.com/actividad/{!! $noticia->id !!}/ver" />
+        <meta property="og:video" content="{!! $noticia->archivo !!}">
+        <!-- @if (explode('/embed/', $noticia->archivo)[0] === 'https://www.youtube.com')
+    <meta property="og:image"         content="{!! 'https://i.ytimg.com/vi/' . explode('/embed/', $noticia->archivo)[1] . '/hqdefault.jpg' !!}" />
     @endif
-    @if(explode('.be/', $noticia->archivo)[0] === 'https://youtu')
-    <meta property="og:image"         content="{!! 'https://i.ytimg.com/vi/'. explode('.be/', $noticia->archivo)[1] .'/hqdefault.jpg' !!}" />
+        @if (explode('.be/', $noticia->archivo)[0] === 'https://youtu')
+    <meta property="og:image"         content="{!! 'https://i.ytimg.com/vi/' . explode('.be/', $noticia->archivo)[1] . '/hqdefault.jpg' !!}" />
     @endif
-    @if(explode('/watch?v=', $noticia->archivo)[0] === 'https://www.youtube.com'))
-     <meta property="og:image"         content="{!! 'https://i.ytimg.com/vi/'. explode('https://www.youtube.com/watch?v=', $noticia->archivo)[1] .'/hqdefault.jpg' !!}" />
+        @if (explode('/watch?v=', $noticia->archivo)[0] === 'https://www.youtube.com')
+    )
+         <meta property="og:image"         content="{!! 'https://i.ytimg.com/vi/' .
+             explode('https://www.youtube.com/watch?v=', $noticia->archivo)[1] .
+             '/hqdefault.jpg' !!}" />
     @endif -->
-   @if( $noticia->key_video)
-     <meta property="og:image"         content="{!! 'https://i.ytimg.com/vi/'.$noticia->key_video.'/hqdefault.jpg' !!}" />
+        @if ($noticia->key_video)
+            <meta property="og:image" content="{!! 'https://i.ytimg.com/vi/' . $noticia->key_video . '/hqdefault.jpg' !!}" />
+        @endif
+    @else
+        <meta property="og:url" content="https://www.marielabaldivieso.com/actividad/{!! $noticia->id !!}/ver" />
+        <meta property="og:image" content="{!! asset('website/public/uploads/noticia/' . $noticia->archivo) !!}" />
     @endif
-  @else
-   <meta property="og:url"           content="https://www.marielabaldivieso.com/actividad/{!!$noticia->id!!}/ver" />
-   <meta property="og:image"         content="{!! asset('website/public/uploads/noticia/'.$noticia->archivo) !!}" />
-  @endif
 @endsection
 
 @section('css')
@@ -56,7 +59,7 @@
                                     <iframe width="100%" height="300px" src="{!! $noticia->archivo !!}" allowfullscreen
                                         allowtransparency allow="autoplay"></iframe>
                                 </div>
-                                 @if (count($galeria) > 0)
+                                @if (count($galeria) > 0)
                                     <div class="col-md-12 col-sm-12 my-4">
                                         <div class="row">
 
@@ -114,8 +117,9 @@
                                 src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v17.0&appId=853213614848126&autoLogAppEvents=1"
                                 nonce="Bid8EAzk"></script>
                             @if ($noticia->tipo == 1)
-                                <div class="fb-share-button" data-href="https://www.marielabaldivieso.com/actividad/{!! $noticia->id !!}/ver" data-layout="box_count"
-                                    data-size="">
+                                <div class="fb-share-button"
+                                    data-href="https://www.marielabaldivieso.com/actividad/{!! $noticia->id !!}/ver"
+                                    data-layout="box_count" data-size="">
                                 </div>
                             @else
                                 <div class="fb-share-button"
