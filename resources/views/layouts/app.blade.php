@@ -99,8 +99,7 @@
         </div>
         <div class="middle-menu center-text">
             <a href="/" class="logo">
-                <img src="{{ asset('assets/images/logos/logo.png') }}" alt="Logo"
-                    style="transform: rotate(5deg);">
+                <img src="{{ asset('assets/images/logos/logo.png') }}" alt="Logo" style="transform: rotate(5deg);">
             </a>
         </div>
 
@@ -140,7 +139,8 @@
                         <li>
                             <a href="{{ route('public.noticias', 'c41') }}"
                                 onclick="toHref('{{ route('public.noticias', 'c41') }}')">
-                                <img src="https://flagsapi.com/MC/flat/24.png" style="width: 20px;"> &nbsp; CIRCUNSCRIPCIÓN
+                                <img src="https://flagsapi.com/MC/flat/24.png" style="width: 20px;"> &nbsp;
+                                CIRCUNSCRIPCIÓN
                                 41
                             </a>
                         </li>
@@ -161,7 +161,8 @@
                     <a href="{{ route('user.index') }}" onclick="toHref('{{ route('user.index') }}')">ADMIN</a>
                 </li>
                 <li class="{{ Request::path() == 'noticias' ? 'active' : '' }}">
-                    <a href="{{ route('noticias.index') }}" onclick="toHref('{{ route('noticias.index') }}')">NOTICIAS</a>
+                    <a href="{{ route('noticias.index') }}"
+                        onclick="toHref('{{ route('noticias.index') }}')">NOTICIAS</a>
                 </li>
                 <li class="{{ Request::path() == 'proyectos' ? 'active' : '' }}">
                     <a href="{{ route('proyectos.index') }}" onclick="toHref('{{ route('proyectos.index') }}')">
@@ -176,7 +177,8 @@
                         onclick="toHref('{{ route('propuestas.index') }}')">PROPUESTAS</a>
                 </li>
                 <li class="{{ Request::path() == 'portadas' ? 'active' : '' }}">
-                    <a href="{{ route('portadas.index') }}" onclick="toHref('{{ route('portadas.index') }}')">PORTADAS</a>
+                    <a href="{{ route('portadas.index') }}"
+                        onclick="toHref('{{ route('portadas.index') }}')">PORTADAS</a>
                 </li>
                 <li class="{{ Request::path() == 'categorias' ? 'active' : '' }}">
                     <a href="{{ route('categorias.index') }}"
@@ -221,61 +223,39 @@
             </a>
         </div>
     @endguest
-    <footer class="footer d-none d-sm-block">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="footer-section">
-                        <p class="copyright">Mariela Baldivieso &copy; 2023. Todos los derechos reservados.</p>
-                    </div>
+    <footer>
+        <div class="content">
+            <div class="top">
+                <div class="logo-details">
+                    <i class="fab fa-slack"></i>
+                    <span class="logo_name">Mariela Baldivieso</span>
                 </div>
-                <div class="col-sm-6 col-xs-12">
-                    <div class="footer-section">
-                        <ul class="social-icons">
-                            <li>
-                                <a href="https://www.facebook.com/MarielaBaldiviesoDiputadaNacional" target="_blank"
-                                    class="color-facebook">
-                                    <ion-icon name="logo-facebook" size="social-icons"></ion-icon>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.tiktok.com/@marielabaldivieso" target="_blank"
-                                    class="color-tiktok">
-                                    <ion-icon name="logo-tiktok" size="social-icons"></ion-icon>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/diputadamarielabaldivieso/" target="_blank"
-                                    class="color-instagram">
-                                    <ion-icon name="logo-instagram" size="social-icons"></ion-icon>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://twitter.com/baldmariela?s=08" target="_blank" class="color-twitter">
-                                    <ion-icon name="logo-twitter" size="social-icons"></ion-icon>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/@marielabaldivieso" target="_blank"
-                                    class="color-youtube">
-                                    <ion-icon name="logo-youtube" size="social-icons"></ion-icon>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.threads.net/@diputadamarielabaldivieso" target="_blank"
-                                    class="color-youtube">
-                                    <object data="{{ asset('assets/images/logos/threads-app-icon.svg') }}"
-                                        width="15" height="15">
-                                    </object>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="media-icons">
+                    <a href="https://www.facebook.com/MarielaBaldiviesoDiputadaNacional" target="_blank" class="facebook">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="https://www.tiktok.com/@marielabaldivieso" target="_blank" class="tiktok">
+                        <ion-icon name="logo-tiktok"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/diputadamarielabaldivieso/" target="_blank" class="instagram">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="https://twitter.com/baldmariela?s=08" target="_blank" class="twitter">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                    <a href="https://www.youtube.com/@marielabaldivieso" target="_blank" class="youtube">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                    <a href="https://www.threads.net/@diputadamarielabaldivieso" target="_blank" class="threads">
+                        <object data="{{ asset('assets/images/logos/threads-app-icon.svg') }}" width="25" height="25"></object>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
+    
+
+
 
     <script src="{{ asset('assets/js/jquery-3.1.1.min.js') }}"></script>
     <script src=" {{ asset('assets/js/tether.min.js') }}"></script>

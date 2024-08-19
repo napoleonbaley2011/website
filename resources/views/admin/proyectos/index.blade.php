@@ -57,9 +57,9 @@
                                 <td>{{ $proyect->introduction_date }}</td>
                                 <td>{{ $proyect->estado }}</td>
                                 <td>
-                                    <a href="{{ route('proyects.show', $proyect->id) }}" class="btn btn-info">Ver</a>
-                                    <a href="{{ route('proyects.edit', $proyect->id) }}" class="btn btn-warning">Editar</a>
-                                    <form action="{{ route('proyects.destroy', $proyect->id) }}" method="POST" style="display:inline;">
+                                    <a href="{{ route('proyectos.show', $proyect->id) }}" class="btn btn-info">Ver</a>
+                                    <a href="{{ route('proyectos.edit', $proyect->id) }}" class="btn btn-warning">Editar</a>
+                                    <form action="{{ route('proyectos.destroy', $proyect->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Eliminar</button>
